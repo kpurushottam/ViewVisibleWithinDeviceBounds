@@ -46,12 +46,14 @@ public class MainActivity extends AppCompatActivity {
                     previousScrollValue = scrollY;
                     alert("Button 1 is NOT VISIBLE");
 
-                } else {
+                } else if(!isVisible) {
                     if(scrollY - previousScrollValue > 0 && !isVisible) { // scrolling down
                         alert("Button 1 is NOT VISIBLE");
                     } else if(scrollY - previousScrollValue < 0 && !isVisible) { // scrolling up
-                        alert("Button 1 is VISIBLE");
+                        alert("Button 1 is NOT VISIBLE");
                     }
+                } else if(isVisible) {
+                    alert("Button 1 is VISIBLE");
                 }
             }
         });
